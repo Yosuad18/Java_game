@@ -2,7 +2,8 @@ class Striker extends Pelea {
     public Striker(String nombre, String peso, int hp, int atk, int car, int agl, int def) {
         super(nombre, peso, hp, atk, car, agl, def);
     }
-
+    @Override
+    
     public void lanzarHighKick(Pelea enemigo) {
         if (car >= 15) {
             int daño = (atk * 3) - (enemigo.def / 2);
