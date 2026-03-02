@@ -45,3 +45,29 @@ class Striker extends Pelea {
         System.out.println(nombre + " lanzó una Low Kick: " + daño + " de daño!");
     }
 }
+
+// class Striker extends Peleador {
+//     public Striker(String nombre, String peso, int hp, int atk, int car, int agl, int def) {
+//         super(nombre, peso, hp, atk, car, agl, def);
+//     }
+
+//     @Override
+//     public void realizarAtaqueAleatorio(Peleador enemigo) {
+//         Random r = new Random();
+//         int opc = r.nextInt(3);
+//         if (opc == 0 && car >= 15) {
+//             int daño = (atk * 3) - (enemigo.def / 2);
+//             enemigo.setHp(enemigo.getHp() - daño);
+//             this.car -= 15;
+//             System.out.println(nombre + " lanzó una HIGH KICK: " + daño + " daño!");
+//         } else if (opc == 1) {
+//             int daño = (atk * 2) - (enemigo.def / 4);
+//             enemigo.setHp(enemigo.getHp() - daño);
+//             System.out.println(nombre + " conectó un Hook: " + daño + " daño!");
+//         } else {
+//             int daño = atk - (enemigo.def / 5);
+//             enemigo.setHp(enemigo.getHp() - daño);
+//             System.out.println(nombre + " marcó con un Jab: " + daño + " daño!");
+//         }
+//     }
+// }

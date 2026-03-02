@@ -33,3 +33,17 @@ class Luchador extends Pelea {
         System.out.println(nombre + " ejecutó una Proyección: " + daño + " de daño!");
     }
 }
+
+// class Luchador extends Peleador {
+//     public Luchador(String nombre, String peso, int hp, int atk, int car, int agl, int def) {
+//         super(nombre, peso, hp, atk, car, agl, def);
+//     }
+
+//     @Override
+//     public void realizarAtaqueAleatorio(Peleador enemigo) {
+//         int daño = (atk + agl) - (enemigo.def / 3);
+//         enemigo.setHp(enemigo.getHp() - daño);
+//         System.out.println(nombre + " ejecutó un Suplex: " + daño + " daño!");
+//     }
+// }
+
