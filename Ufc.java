@@ -48,8 +48,24 @@ public class UFCGame {
         Grappler rank3 = new Grappler("Charles Oliveira", "Ligero", 1050, 45, 70, 60, 40);
         Striker rank4 = new Striker("Max Holloway", "Ligero", 1000, 42, 75, 65, 40);
         Striker rank5 = new Striker("Benoit Saint Denis", "Ligero", 1000, 42, 75, 65, 40);
-        // --- CATEGORÍA LIGERO (155 lb) ---
-        // --- CATEGORÍA LIGERO (155 lb) ---
+        // --- CATEGORÍA LIGERO (170 lb) ---
+        // Campeón
+        Striker campeonLigero = new Striker("Islam Makachev", "Welter", 1200, 40, 90, 70, 50);
+        // Top 5
+        Striker rank1 = new Striker("Jack Della Maddalena", "Welter", 1000, 35, 85, 75, 45);
+        Striker rank2 = new Striker("Ian Machado Garry", "Welter", 950, 30, 80, 85, 35);
+        Grappler rank3 = new Striker("Michael Morales", "Welter", 1050, 45, 70, 60, 40);
+        Luchador rank4 = new Luchador("Belal Muhammad", "Welter", 1000, 42, 75, 65, 40);
+        Striker rank5 = new Striker("Carlos Prates", "Welter", 1000, 42, 75, 65, 40);
+        // --- CATEGORÍA LIGERO (185 lb) ---
+        // Campeón
+        Luchador campeonLigero = new Luchador("Khamzat Chimaev", "Mediano", 1200, 40, 90, 70, 50);
+        // Top 5
+        Striker rank1 = new Striker("Jack Della Maddalena", "Mediano", 1000, 35, 85, 75, 45);
+        Striker rank2 = new Striker("Ian Machado Garry", "Mediano", 950, 30, 80, 85, 35);
+        Grappler rank3 = new Striker("Michael Morales", "Mediano", 1050, 45, 70, 60, 40);
+        Luchador rank4 = new Luchador("Belal Muhammad", "Mediano", 1000, 42, 75, 65, 40);
+        Striker rank5 = new Striker("Carlos Prates", "Mediano", 1000, 42, 75, 65, 40);
         // --- CATEGORÍA LIGERO (155 lb) ---
         // --- CATEGORÍA LIGERO (155 lb) ---
         //Mas categorias  
