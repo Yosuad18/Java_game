@@ -3,12 +3,10 @@ import java.util.Random;
 public class Peleador {
     protected String nombre, categoriaPeso;
     protected int hp, atk, car, maxCar, agl, def;
-    private final int rank;
 
-    public Peleador(String nombre, String Peso ,int rank, int hp, int atk, int car, int agl, int def) {
+    public Peleador(String nombre, String categoriaPeso, int hp, int atk, int car, int agl, int def) {
         this.nombre = nombre;
-        this.categoriaPeso = Peso;
-        this.rank = rank;
+        this.categoriaPeso = categoriaPeso;
         this.hp = hp;
         this.atk = atk;
         this.car = car;
@@ -19,14 +17,8 @@ public class Peleador {
 
     public int getHp() { return hp; }
     public void setHp(int hp) { this.hp = Math.max(0, hp); }
-    
     public String getNombre() { return nombre; }
-    
-    public int getRank() { return rank; }
-    public String getNombreConRank() {return (rank == 0) ? "[C] " + nombre : "[" + rank + "] " + nombre;}
-    
     public int getCar() { return car; }
-    
     public boolean estaVivo() { return hp > 0; }
     
     public void recuperarCardio() {
