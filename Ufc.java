@@ -1,86 +1,64 @@
-public class UFCGame {
+import java.util.Random;
+import java.util.Scanner;
+
+public class Ufc {
     public static void main(String[] args) {
+        //Entradas y random
+        Scanner sc = new Scanner(System.in);
+        Random rand = new Random();
 
-        // 1. Elegir Categoría
-        System.out.print("Elige categoría (Ligero/Wélter/Pesado): ");
-        String cat = sc.nextLine();
-
-        // 2. Configurar Jugador
-        System.out.print("Nombre de tu peleador (escribe 'random' para azar): ");
-        String p1Nombre = sc.nextLine();
-        Pelea jugador = crearPeleador(p1Nombre, cat);
-
-        // --- CATEGORÍA LIGERO (125 lb) ---
-        // Campeón
-        Striker campeonLigero = new Striker("Jhosua Van", "Mosca", 1200, 40, 90, 70, 50);
-        // Top 5
-        Striker rank1 = new Grappler("Alexandre Pantoja", "Mosca", 1000, 35, 85, 75, 45);
-        Luchador rank2 = new Luchador("Manel Kape", "Mosca", 950, 30, 80, 85, 35);
-        Grappler rank3 = new Grappler("Tatsuro Taira", "Mosca", 1050, 45, 70, 60, 40);
-        Striker rank4 = new Striker("Brandon Royval", "Mosca", 1000, 42, 75, 65, 40);
-        Striker rank5 = new Striker("Brandon Moreno", "Mosca", 1000, 42, 75, 65, 40);
-        // --- CATEGORÍA LIGERO (135 lb) ---
-        // Campeón
-        Striker campeonLigero = new Striker("Petr Yan", "Gallo", 1200, 40, 90, 70, 50);
-        // Top 5
-        Striker rank1 = new Luchador("Merab Dvalishvili", "Gallo", 1000, 35, 85, 75, 45);
-        Luchador rank2 = new Luchador("Umar Nurmagomedov", "Gallo", 950, 30, 80, 85, 35);
-        Grappler rank3 = new Striker("Sean O'Malley", "Gallo", 1050, 45, 70, 60, 40);
-        Striker rank4 = new Striker("Cory Sandhagen", "Gallo", 1000, 42, 75, 65, 40);
-        Striker rank5 = new Striker("Song Yadong", "Gallo", 1000, 42, 75, 65, 40);
-
-        // --- CATEGORÍA LIGERO (145 lb) ---
-        // Campeón
-        Striker campeonLigero = new Striker("Alexander Volkanosky", "Pluma", 1200, 40, 90, 70, 50);
-        // Top 5
-        Striker rank1 = new Luchador("Movsar Evloev", "Pluma", 1000, 35, 85, 75, 45);
-        Luchador rank2 = new Striker("Diego Lopes", "Pluma", 950, 30, 80, 85, 35);
-        Grappler rank3 = new Striker("Lerone Murphy", "Pluma", 1050, 45, 70, 60, 40);
-        Striker rank4 = new Striker("Yair Rodriguez", "Pluma", 1000, 42, 75, 65, 40);
-        Striker rank5 = new Grappler("Aljamain Sterling", "Pluma", 1000, 42, 75, 65, 40);
-
-        // --- CATEGORÍA LIGERO (155 lb) ---
-        // Campeón
-        Striker campeonLigero = new Striker("Ilia Topuria", "Ligero", 1200, 40, 90, 70, 50);
-        // Top 5
-        Striker rank1 = new Striker("Justin Gaethje", "Ligero", 1000, 35, 85, 75, 45);
-        Luchador rank2 = new Luchador("Arman Tsarukyan", "Ligero", 950, 30, 80, 85, 35);
-        Grappler rank3 = new Grappler("Charles Oliveira", "Ligero", 1050, 45, 70, 60, 40);
-        Striker rank4 = new Striker("Max Holloway", "Ligero", 1000, 42, 75, 65, 40);
-        Striker rank5 = new Striker("Benoit Saint Denis", "Ligero", 1000, 42, 75, 65, 40);
-        // --- CATEGORÍA LIGERO (155 lb) ---
-        // --- CATEGORÍA LIGERO (155 lb) ---
-        // --- CATEGORÍA LIGERO (155 lb) ---
-        // --- CATEGORÍA LIGERO (155 lb) ---
-        //Mas categorias  
-        // --- SIMULACIÓN DE PELEA POR EL TÍTULO ---
-        System.out.println("=== PELEA POR EL TITULO ===");
-        //hacer random para elegir el retador
-        System.out.println(campeonLigero.getNombre() + " (C) vs " + rank2.getNombre() + " (#2)");
-        System.out.println("-----------------------------------");
-
-        // Cambiar 
-        while (campeonLigero.estaVivo() && rank2.estaVivo()) {
-            // Turno del Campeón
-            campeonLigero.lanzarHighKick(rank2);
-            
-            if (!rank2.estaVivo()) break;
-
-            // Turno del Retador
-            rank2.mataLeon(campeonLigero);
-
-            // Mostrar Estado
-            campeonLigero.mostrarStatus();
-            rank2.mostrarStatus();
-            System.out.println(" ");
+        String[] categorias = {"Mosca", "Gallo", "Pluma", "Ligero", "Welter", "Mediano", "Semi-pesado", "Pesado"};
+        for (String categoria : categorias) {
+            System.out.println("Categorías: " + categoria);
         }
-
-        // Resultado
-        System.out.println("=== RESULTADOS FINALES ===");
-        if (campeonLigero.estaVivo()) {
-            System.out.println("AND STILL! " + campeonLigero.getNombre() + " retiene el título.");
+        
+        System.out.print("Selecciona categoría (o 'r' para aleatoria): ");
+        String entradaCat = sc.nextLine();
+        
+        String catElegida;
+        if ("r".equalsIgnoreCase(entradaCat)) {
+            catElegida = categorias[rand.nextInt(categorias.length)];
+            System.out.println("Categoría aleatoria elegida: " + catElegida);
         } else {
-            System.out.println("AND NEW! " + rank2.getNombre() + " es el nuevo campeón.");
+            catElegida = entradaCat;
         }
+           
+        Peleador[] todos = Division.obtenerPeleadores(); 
+        Peleador[] filtrados = filtrarPeleadores(todos, catElegida);
+
+        if (filtrados[0] == null) {
+            System.out.println("No se encontraron peleadores en esta categoría.");
+            return;
+        }
+        
+        System.out.println("\n--- LISTA DE PELEADORES (" + catElegida + ") ---");
+        for (Peleador p : filtrados) {
+            if (p != null) System.out.println(p.getNombreConRank());
+        }
+        
+        Peleador jugador = seleccionarPeleador(sc, rand, filtrados, "tu peleador", -1);
+        int idxJugador = obtenerIndice(filtrados, jugador);
+        Peleador oponente = seleccionarPeleador(sc, rand, filtrados, "tu oponente", idxJugador);
+
+        System.out.println("\n=== COMBATE: " + jugador.getNombre() + " vs " + oponente.getNombre() + " ===");
+             
+     
+    public static Peleador[] filtrarPeleadores(Peleador[] listaTotal, String categoria) {
+        Peleador[] resultado = new Peleador[6]; // C + Top 5
+        for (Peleador p : listaTotal) {
+            if (p.categoriaPeso.equalsIgnoreCase(categoria)) {
+                if (p.getRank() >= 0 && p.getRank() <= 5) {
+                    resultado[p.getRank()] = p;
+                }
+            }
+        }
+        return resultado;
+    } 
+        
+    public static int obtenerIndice(Peleador[] lista, Peleador p) {
+        for (int i = 0; i < lista.length; i++) {
+            if (lista[i] == p) return i;
+        }
+        return -1;
     }
 }
